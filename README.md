@@ -4,6 +4,22 @@ A RUBY SYSTEM FOR BUSINESS COMMUNICATION
 Initialized by Andreas Altendorfer on Juli 24, 2012 after
 studying Uncle Bob's 'Clean Code (Episodes 1 to 7)'
 
+WHERE/HWO TO START?
+===================
+
+  1. clone from GitHub
+  2. bundle
+  3. rake
+
+  > $ rake
+  > rspec spec/spec_helper.rb spec/*/
+  > ..
+  >
+  > Finished in 0.00567 seconds
+  > 2 examples, 0 failures
+
+
+
 License
 =======
 
