@@ -1,1 +1,1 @@
-require File.expand_path("../../lib/app/application", __FILE__)
+require File.expand_path('../../config/boot', __FILE__)

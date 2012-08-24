@@ -1,3 +1,5 @@
+require File.expand_path( '../../spec_helper',__FILE__)
+
 describe "Test Environment" do
 
   it "runs rspec tests" do

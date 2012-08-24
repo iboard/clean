@@ -1,11 +1,22 @@
-A RUBY SYSTEM FOR BUSINESS COMMUNICATION
-========================================
+A RUBY SYSTEM FOR CLEAN APPLICATION DEVELOPMENT
+===============================================
 
 Initialized by Andreas Altendorfer on Juli 24, 2012 after
-studying Uncle Bob's 'Clean Code (Episodes 1 to 7)'
+studying Uncle Bob's 'Clean Code (Episodes 1 to 12)'. It's aim is to demonstrate and learn how a plain
+ruby-app (w/o Rails) can work in the matter of _CleanCode_
 
-WHERE/HWO TO START?
+WHERE/HOW TO START?
 ===================
+
+Requirements
+------------
+
+  * ruby 1.9.x
+  * bundler
+  * Used, 3rd-party gems are listed in Gemfile
+
+Quickstart/run
+--------------
 
   1. clone from GitHub
   2. bundle
@@ -14,10 +25,30 @@ WHERE/HWO TO START?
   > $ rake
   > rspec spec/spec_helper.rb spec/*/
   > ..
-  >
-  > Finished in 0.00567 seconds
-  > 2 examples, 0 failures
 
+  4. run the app from the command-line
+
+  > ruby bin/run.rb
+
+
+Browse the code
+---------------
+
+**app/**
+The Application
+
+**config/**
+Boot and configure
+
+**lib/**
+Rake-tasks
+
+
+100%
+====
+
+When you fork this project it has 100% test-, and documentation-coverage.
+It's up to you to keep at this level when starting your own Application.
 
 
 License
