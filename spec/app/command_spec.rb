@@ -15,7 +15,7 @@ describe BaseCommand do
   describe "BaseCommands's derivations" do
 
     it "runs DebugApplication" do
-      Application.new('-q', '--command=ApplicationDebugger,"modules"').run.should include( ['Boot', 'config/boot.rb'] )
+      Application.new('-q', '--command=ApplicationDebugger,"loaded_files"').run.should include( ['Boot', 'config/boot.rb'] )
     end
 
     it "raises an exception if Debugger-command not found" do

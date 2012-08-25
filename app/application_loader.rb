@@ -20,7 +20,9 @@ module ApplicationLoader
     @loaded_files
   end
 
-  # Load ClassMethods to Application
+  # When included to Application it:
+  # * Loads ClassMethods
+  # * Find source-files and add do autoload for each file
   # Raises an exception if base is not the Application
   def self.included(base)
     raise "ApplicationLoader can be included in class Application only." unless base == Application
@@ -61,7 +63,10 @@ module ApplicationLoader
     _first_char + _string.gsub( /(_)([a-z])([a-z]*)/ ) { |args| args[1].upcase + args[2..-1] }
   end
 
+
+  # Add module/class defined in path to @loaded_files
   # @param [String] path
+  # @return [Array] of [Module, path]
   def self.load_file(path)
     name = camelize_string( File.basename(path).gsub(/\.rb\Z/, '') )
     autoload name, path

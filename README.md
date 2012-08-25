@@ -60,7 +60,7 @@ Available Commands and Examples
 ===============================
 
 ```sh
-  ~/Development/clean(master) $ bin/run.rb --command=ApplicationDebugger,'"modules"' -verbose
+  ~/Development/clean(master) $ bin/run.rb --command=ApplicationDebugger,'"loaded_files"' -verbose
 
   I, [2012-08-25T23:00:22.138695 #18958]  INFO -- : Logger.level set to 1
   I, [2012-08-25T23:00:22.138869 #18958]  INFO -- : INITIALIZE CommandRunner.new(["ApplicationDebugger", "\"modules\""])

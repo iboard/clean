@@ -5,4 +5,4 @@
 require File.expand_path('../../config/boot', __FILE__ )
 app = Application.new(*ARGV)
 rc=app.run
-p app unless rc.is_a?(Fixnum)
+p rc unless rc.is_a?(Fixnum)

@@ -14,7 +14,6 @@ class CommandRunner
   # Evals "command-name.new(arg1,arg2,....)"
   def run
     command = @command.first
-    _command = nil
     params = @command[1..-1]
     Application.logger.info("Evaluate >>#{command}.new(#{params.join(',')})<<")
     _command = eval( "#{command}.new(#{params.join(',')})")

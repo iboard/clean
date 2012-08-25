@@ -8,7 +8,9 @@ class Application
 
   include ApplicationLoader
 
-  # ::new Application with parameters
+  # ::new Application with parameters.
+  # * Parses options
+  # * Sets log-level
   # @param [Array] args - will be parsed with OptionParser
   def initialize(*args)
     parse_options(*args)
@@ -49,6 +51,7 @@ class Application
   # @return Array - the parsed options
   def parse_options(*args)
     _opts = OptionParser.new(args) do |opts|
+
       opts.banner = "Usage: #{$0} [options]"
 
       opts.on("-q", "--quiet", "Log-level FATAL") do |v|
