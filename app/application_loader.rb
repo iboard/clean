@@ -11,6 +11,8 @@ module ApplicationLoader
 
   # The application root path. Remove this from any path to reference relative filenames.
   ROOT_PATH = File.expand_path('../..', __FILE__)
+
+  # Array of loaded files-arrays [ ['Boot', 'config/boot.rb'] ]
   @loaded_files = []
 
   # @return [Array]- List of successfully loaded files

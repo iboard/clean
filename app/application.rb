@@ -1,10 +1,5 @@
 # -*- encoding : utf-8 -*-
 
-require File.expand_path('../application_loader', __FILE__)
-require File.expand_path('../../app/exceptions/options_error', __FILE__)
-require 'logger'
-require 'optparse'
-
 # = Application
 # The Application class handles the outer-application-loop and loading
 # of ruby-files
@@ -13,11 +8,20 @@ class Application
 
   include ApplicationLoader
 
+  # ::new Application with parameters
+  # @param [Array] args - will be parsed with OptionParser
   def initialize(*args)
     parse_options(*args)
     set_log_level
+    @@application = self
   end
 
+  # @return [Application] - the current running application object
+  def self.application
+    @@application
+  end
+
+  # @return Hash - the options-hash parsed at initializer
   def options
     @options ||= {}
   end
@@ -25,17 +29,24 @@ class Application
   # Initialize on first call and then return Logger-object
   # @return [Logger]
   def logger
-    @logger ||= Logger.new($stdout)
+    @@logger ||= Logger.new($stdout)
+  end
+
+  # @return Logger - The application-logger object
+  def self.logger
+    @@logger
   end
 
   # Run the application's outer loop
   # @return [Integer]  0 on success -N on failures/fatal, +N on errors
   def run
-    0
+    options[:command] ? CommandRunner.new(options[:command]).run : 0
   end
 
 
   private
+  # @param [Array] args The arguments for running the application
+  # @return Array - the parsed options
   def parse_options(*args)
     _opts = OptionParser.new(args) do |opts|
       opts.banner = "Usage: #{$0} [options]"
@@ -47,11 +58,17 @@ class Application
       opts.on("-v", "--verbose", "Log-level INFO") do |v|
         options[:verbose] = v
       end
+
+      opts.on("-c", "--command param1,param2,param3", Array, "execute a command") do |list|
+        options[:command] = list
+      end
+
     end
     _opts.parse!(args)
   end
 
-
+  # Called on initializer after parsing the arguments.
+  # Loglevel is set according to options -v or -q
   def set_log_level
     logger.level = options[:quiet] ? Logger::FATAL : Logger::WARN
     logger.level = Logger::INFO if options[:verbose]

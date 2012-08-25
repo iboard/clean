@@ -20,6 +20,10 @@ describe Application do
     @app.logger.info("Hello Tests").should be_true
   end
 
+  it "reports running app" do
+    Application.application.should == @app
+  end
+
   describe "Interpret options" do
 
     it "defaults log-level to WARN" do
