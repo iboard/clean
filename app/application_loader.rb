@@ -35,9 +35,8 @@ module ApplicationLoader
       unless file[0] == '.'
         if File.file?( path )
           load_file(path)
-        # @todo enable when first subdirectory is defined
-        # elsif File.directory?(path)
-        #   search_and_autoload_files(path)
+        elsif File.directory?(path)
+          search_and_autoload_files(path)
         end
       end
     end
