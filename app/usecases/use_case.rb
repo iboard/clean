@@ -3,7 +3,7 @@
 # @author Andi Altendorfer <andreas@altendorfer.at>
 # @since 25.08.12
 #
-class BaseCommand
+class UseCase
 
   attr_reader :params
 

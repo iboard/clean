@@ -49,6 +49,17 @@ Rake-tasks
 
 ![Dependencies](https://docs.google.com/viewer?pid=explorer&srcid=0BxdssCjqaEh6VzRJb0Y1Tl9iWkE&docid=076a4af111c9cefe1db3fb9077a133b9%7C7ac4f30e6ff088c61ee879bb853eaad3&a=bi&pagenumber=1&w=800)
 
+
+Extend with your code
+---------------------
+
+* Write a class, derived from 'UseCase' - eg: MyClass < UseCase
+* Implement method MyClass::run
+
+
+
+
+
 100%
 ====
 
@@ -59,28 +70,27 @@ It's up to you to keep at this level when starting your own Application.
 Available Commands and Examples
 ===============================
 
-```sh
-  ~/Development/clean(master) $ bin/run.rb --command=ApplicationDebugger,'"loaded_files"' -verbose
+    ~/Development/clean(master) $ bin/run.rb --command=ApplicationInfo,'"loaded_files"' -verbose
 
-  I, [2012-08-25T23:00:22.138695 #18958]  INFO -- : Logger.level set to 1
-  I, [2012-08-25T23:00:22.138869 #18958]  INFO -- : INITIALIZE CommandRunner.new(["ApplicationDebugger", "\"modules\""])
-  I, [2012-08-25T23:00:22.138980 #18958]  INFO -- : Evaluate >>ApplicationDebugger.new("modules")<<
-  Boot
-  config/boot.rb
-  Application
-  app/application.rb
-  ApplicationLoader
-  app/application_loader.rb
-  ApplicationDebugger
-  app/commands/application_debugger.rb
-  BaseCommand
-  app/commands/base_command.rb
-  CommandRunner
-  app/commands/command_runner.rb
-  OptionsError
-  app/exceptions/options_error.rb
+    I, [2012-08-25T23:00:22.138695 #18958]  INFO -- : Logger.level set to 1
+    I, [2012-08-25T23:00:22.138869 #18958]  INFO -- : INITIALIZE CommandRunner.new(["ApplicationInfo", "\"modules\""])
+    I, [2012-08-25T23:00:22.138980 #18958]  INFO -- : Evaluate >>ApplicationInfo.new("modules")<<
+    Boot
+    config/boot.rb
+    Application
+    app/application.rb
+    ApplicationLoader
+    app/application_loader.rb
+    ApplicationInfo
+    app/commands/application_info.rb
+    BaseCommand
+    app/usecases/use_case.rb
+    CommandRunner
+    app/usecases/command_runner.rb
+    OptionsError
+    app/exceptions/options_error.rb
 
-```
+
 
 
 License
