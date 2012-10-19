@@ -6,7 +6,7 @@
 require "rspec"
 
 describe "Tests the implementation from within OS" do
-  it "should runs an application" do
+  it "should run an application" do
     system("ruby", File.expand_path("../../../bin/run.rb",__FILE__)).should be_true
   end
 end

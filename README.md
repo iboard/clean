@@ -33,7 +33,7 @@ Quickstart/run
 
   4. run the app from the command-line
 
-  > ruby bin/run.rb
+  > ruby bin/run.rb  --help
 
 
 Browse the code
