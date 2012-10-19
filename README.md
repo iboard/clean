@@ -27,13 +27,12 @@ Quickstart/run
   2. bundle
   3. rake
 
-  > $ rake
-  > rspec spec/spec_helper.rb spec/*/
-  > ..
+        $ rake
+        rspec spec/spec_helper.rb spec/*/
 
   4. run the app from the command-line
 
-  > ruby bin/run.rb  --help
+        ruby bin/run.rb  --help
 
 
 Browse the code
