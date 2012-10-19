@@ -48,6 +48,7 @@ Boot and configure
 **lib/**
 Rake-tasks
 
+![Dependencies](https://docs.google.com/viewer?pid=explorer&srcid=0BxdssCjqaEh6VzRJb0Y1Tl9iWkE&docid=076a4af111c9cefe1db3fb9077a133b9%7C7ac4f30e6ff088c61ee879bb853eaad3&a=bi&pagenumber=1&w=800)
 
 100%
 ====
