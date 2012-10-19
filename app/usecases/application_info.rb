@@ -8,7 +8,7 @@ class ApplicationInfo < UseCase
 
   # Run the ApplicationDebugger
   # If first param is not known it raises an OptionError
-  def run
+  def execute
     begin
       self.send(params.first.to_sym)
     rescue NoMethodError, NameError
@@ -16,7 +16,7 @@ class ApplicationInfo < UseCase
     end
   end
 
-  private
+  protected
   def loaded_files
     ApplicationLoader.loaded_ruby_files
   end

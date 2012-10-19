@@ -13,3 +13,4 @@ require File.expand_path('../../app/usecases/use_case', __FILE__)
 require File.expand_path('../../app/usecases/application_info', __FILE__)
 require File.expand_path('../../app/application', __FILE__)
 
+require File.expand_path('../../app/usecases/example_usecase', __FILE__)

@@ -47,7 +47,7 @@ Boot and configure
 **lib/**
 Rake-tasks
 
-![Dependencies](https://docs.google.com/viewer?pid=explorer&srcid=0BxdssCjqaEh6VzRJb0Y1Tl9iWkE&docid=076a4af111c9cefe1db3fb9077a133b9%7C7ac4f30e6ff088c61ee879bb853eaad3&a=bi&pagenumber=1&w=800)
+![Dependencies](https://docs.google.com/viewer?pid=explorer&srcid=0BxdssCjqaEh6VzRJb0Y1Tl9iWkE&docid=2626c4310bfeb692f4123c60de559b74%7C5df9d15c4f275da200b25854bed41a94&a=bi&pagenumber=1&w=800)
 
 
 Extend with your code
@@ -56,8 +56,13 @@ Extend with your code
 * Write a class, derived from 'UseCase' - eg: MyClass < UseCase
 * Implement method MyClass::run
 
+See `app/usecases/example_usecase.rb`
 
+Run
 
+    $ bin/run.rb --command='ExampleUsecase,"hello","world"'
+    This is an example UseCase
+    Params: ["hello", "world"]
 
 
 100%
