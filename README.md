@@ -27,16 +27,22 @@ Quickstart/run
   2. bundle
   3. rake
 
-        $ rake
+        rake
         rspec spec/spec_helper.rb spec/*/
+
+        # Provide evironment:
+        ENVIRONMENT=test rake  # suppress output in test-mode :test is set by default use :devevlopement, :production
+        FORMAT=d rake          # change rspec-output format (d ... text, p ... dots)
 
   4. run the app from the command-line
 
-        ruby bin/run.rb  --help
-
+        bin/run.rb  --help
+        bin/run.rb commands
+        bin/run.rb loaded
+        bin/run.rb --command="ExampleUsecase,'p1','p2','more Parameters...'"
 
 Browse the code
----------------
+===============
 
 **app/**
 The Application
@@ -51,7 +57,7 @@ Rake-tasks
 
 
 Extend with your code
----------------------
+=====================
 
 * Write a class, derived from 'UseCase' - eg: MyClass < UseCase
 * Implement method MyClass::execute
@@ -65,8 +71,8 @@ Run
     Params: ["hello", "world"]
 
 
-100%
-====
+100% Coverage & Documentation
+=============================
 
 When you fork this project it has 100% test-, and documentation-coverage.
 It's up to you to keep at this level when starting your own Application.

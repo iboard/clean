@@ -46,7 +46,7 @@ class Application
     _cmd ||= options[:command] ? CommandRunner.new(options[:command]) : 0
     if _cmd.class == CommandRunner
       _cmd.run do |item|
-        puts "%s:\n  %s\n\n" % [ item.class, item.desc ] if item.is_a?(UseCase)
+        puts "%s:\n  %s\n\n" % [ item.class, item.desc ] if item.is_a?(UseCase) && ENV['ENVIRONMENT'] != 'test'
       end
     else
       _cmd
