@@ -5,8 +5,8 @@ Initialized by Andreas Altendorfer on Juli 24, 2012 after
   studying Uncle Bob's 'Clean Code (Episodes 1 to 12)'. It's aim is to demonstrate and learn how a plain
   ruby-app (w/o Rails) can work in the matter of _CleanCode_
 
-'clean' implements an Application-class which can run commands. A 'command' is
-  a subclass of BaseCommand and has a 'run-method'.
+'clean' implements an Application-class which can execute UseCases. A 'UseCase' is
+  a derivative of class UseCase and implements an 'exexute-method'.
 
 A list of available commands can be found at the end of this file.
 
