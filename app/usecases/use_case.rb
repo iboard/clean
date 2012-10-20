@@ -5,7 +5,11 @@
 #
 class UseCase
 
-  attr_reader :params
+  attr_reader :params, :description
+
+  def desc
+    "Abstract UseCase - define/overwrite method :execute in concrete class"
+  end
 
   # The abstract BaseCommand stores params in instance-var
   def initialize(*params)
@@ -24,4 +28,5 @@ class UseCase
   def execute
     raise NotImplementedError.new('run is an abstract method in BaseCommand. Please override.')
   end
+
 end

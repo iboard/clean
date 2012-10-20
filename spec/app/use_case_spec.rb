@@ -23,7 +23,11 @@ describe UseCase do
     end
 
     it "runs ApplicationInfo => '-q', '--command=ApplicationInfo,\"available_commands\"'" do
-      Application.new('-q', '--command=ApplicationInfo,"available_commands"').run.should include( 'ApplicationInfo (app/usecases/application_info.rb)' )
+      Application.new('-q', '--command=ApplicationInfo,"available_commands"').run.map{|c| c.class}.should include( ApplicationInfo, ExampleUsecase, UseCase )
+    end
+
+    it "lists description of UseCases" do
+      UseCase.new().desc.should =~ /^Abstract UseCase - define\/overwrite method :execute/
     end
 
   end

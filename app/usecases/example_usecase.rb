@@ -1,6 +1,10 @@
 # -*- encoding : utf-8 -*-"
 class ExampleUsecase  < UseCase
 
+  def desc
+    "ExampleUsecase - prints it's source and parameters --command=\"ExampleUsecase,'param1','param2',...\""
+  end
+
   def execute
     puts header
     system( "cat '#{__FILE__}' | sed 's/^/>  /'" )

@@ -45,5 +45,9 @@ describe Application do
       expect { Application.new '-vq'  }.to raise_error OptionsError
     end
 
+    it "lists available commands commands" do
+      app = ApplicationInfo.new('available_commands')
+      app.run.to_s.should =~ /ApplicationInfo/
+    end
   end
 end

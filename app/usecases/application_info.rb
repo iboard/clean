@@ -6,6 +6,10 @@
 #   will call .loaded_files(). Add new usecases to the 'private'-block of this class
 class ApplicationInfo < UseCase
 
+  def desc
+    "--command='ApplicationInfo,\"loaded_files|available_commands\"'"
+  end
+
   # Run the ApplicationDebugger
   # If first param is not known it raises an OptionError
   def execute
@@ -24,11 +28,12 @@ class ApplicationInfo < UseCase
   def available_commands
     ApplicationLoader.loaded_ruby_files.map { |_class,_file|
       begin
-        eval("#{_class}").new.is_a?(UseCase) ? _class + " (#{_file})" : nil
+        _c = eval(_class).new
+        _c.is_a?(UseCase) ? _c : nil
       rescue
         nil
       end
-    }.compact.reject{|r| r == 'BaseCommand'}.sort
-end
+    }.compact.reject{|r| r == 'BaseCommand'}
+  end
 
 end
