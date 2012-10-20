@@ -7,7 +7,7 @@ class ExampleUsecase  < UseCase
 
   def execute
     puts header
-    system( "cat '#{__FILE__}' | sed 's/^/>  /'" )
+    system( "cat '#{__FILE__}' | sed 's/^/#  /'" )
     puts inspect_params
     0
   end
