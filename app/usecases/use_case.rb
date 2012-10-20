@@ -7,6 +7,7 @@ class UseCase
 
   attr_reader :params, :description
 
+  # @return a (one-line) description for this UseCase
   def desc
     "Abstract UseCase - define/overwrite method :execute in concrete class"
   end
@@ -16,6 +17,8 @@ class UseCase
     @params = *params
   end
 
+  # call method execute on UseCases
+  # @return [UseCase.execute]
   def run
     Application.logger.info "Executing #{self.class.to_s} (UseCase)"
     _r = execute
