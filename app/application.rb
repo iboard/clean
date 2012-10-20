@@ -31,7 +31,7 @@ class Application
   # Initialize on first call and then return Logger-object
   # @return [Logger]
   def logger
-    @@logger ||= Logger.new($stdout)
+    @@logger ||= Logger.new(ENV['ENVIRONMENT']=="test" ? false : $stdout)
   end
 
   # @return Logger - The application-logger object
