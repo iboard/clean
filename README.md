@@ -75,25 +75,48 @@ It's up to you to keep at this level when starting your own Application.
 Available Commands and Examples
 ===============================
 
-    ~/Development/clean(master) $ bin/run.rb --command=ApplicationInfo,'"loaded_files"' -verbose
+    bin/run.rb --command='ApplicationInfo,"available_commands"'
+    => ["ApplicationInfo (app/usecases/application_info.rb)", "ExampleUsecase (app/usecases/example_usecase.rb)", "UseCase (app/usecases/use_case.rb)"]
 
-    I, [2012-08-25T23:00:22.138695 #18958]  INFO -- : Logger.level set to 1
-    I, [2012-08-25T23:00:22.138869 #18958]  INFO -- : INITIALIZE CommandRunner.new(["ApplicationInfo", "\"modules\""])
-    I, [2012-08-25T23:00:22.138980 #18958]  INFO -- : Evaluate >>ApplicationInfo.new("modules")<<
-    Boot
-    config/boot.rb
-    Application
-    app/application.rb
-    ApplicationLoader
-    app/application_loader.rb
-    ApplicationInfo
-    app/commands/application_info.rb
-    BaseCommand
-    app/usecases/use_case.rb
-    CommandRunner
-    app/usecases/command_runner.rb
-    OptionsError
-    app/exceptions/options_error.rb
+    bin/run.rb --command='ApplicationInfo,"loaded_files"'
+    => [["Boot", "config/boot.rb"], ["Application", "app/application.rb"], ["ApplicationLoader", "app/application_loader.rb"], ["OptionsError", "app/exceptions/options_error.rb"], ["ApplicationInfo", "app/usecases/application_info.rb"], ["CommandRunner", "app/usecases/command_runner.rb"], ["ExampleUsecase", "app/usecases/example_usecase.rb"], ["UseCase", "app/usecases/use_case.rb"]]
+
+    bin/run.rb --command='ExampleUsecase,"hello","world"' -v
+    => I, [2012-10-20T02:28:15.899906 #10293]  INFO -- : Logger.level set to 1
+       I, [2012-10-20T02:28:15.900042 #10293]  INFO -- : INITIALIZE CommandRunner.new(["ExampleUsecase", "\"hello\"", "\"world\""])
+       I, [2012-10-20T02:28:15.900084 #10293]  INFO -- : Evaluate >> ExampleUsecase.new("hello","world")
+       I, [2012-10-20T02:28:15.900132 #10293]  INFO -- : Executing ExampleUsecase (UseCase)
+
+       USECASE EXAMPLE
+       ===============
+       /Users/aa/Development/clean/app/usecases/example_usecase.rb
+
+       >  # -*- encoding : utf-8 -*-"
+       >  class ExampleUsecase  < UseCase
+       >
+       >    def execute
+       >      puts header
+       >      system( "cat '#{__FILE__}' | sed 's/^/>  /'" )
+       >      puts inspect_params
+       >      0
+       >    end
+       >
+       >
+       >    protected
+       >    def inspect_params
+       >      puts "\n\nCalled with params: #{params.to_json}"
+       >    end
+       >
+       >    def header
+       >      "\nUSECASE EXAMPLE\n" + "="*"usecase example".length + "\n#{__FILE__}\n\n"
+       >    end
+       >
+       >  end
+
+
+       Called with params: ["hello","world"]
+
+       I, [2012-10-20T02:28:15.905374 #10293]  INFO -- : Returned from ExampleUsecase => 0
 
 
 
