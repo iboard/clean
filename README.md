@@ -1,5 +1,5 @@
-A PURE RUBY FRAMEWORK FOR CLEAN APPLICATION DEVELOPMENT
-=======================================================
+A RUBY LESSON
+=============
 
 Initialized by Andreas Altendorfer on Juli 24, 2012 after
   studying Uncle Bob's 'Clean Code (Episodes 1 to 12)'. It's aim is to demonstrate and learn how a plain
