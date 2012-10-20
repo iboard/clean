@@ -20,11 +20,26 @@ Requirements
   * bundler
   * Used, 3rd-party gems are listed in Gemfile
 
+        gem "rspec"
+        gem "json"
+        group :development do
+          gem "yard"
+          gem "redcarpet"
+          gem "simplecov"
+        end
+
 Quickstart/run
 --------------
 
   1. clone from GitHub
+
+        git clone https://github.com/iboard/clean.git
+
   2. bundle
+
+        cd clean
+        bundle
+
   3. rake
 
         rake
