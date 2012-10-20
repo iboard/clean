@@ -64,7 +64,7 @@ class Application
         when :commands
           'available_commands'
         else
-          Application.logger.error "Command not found '#{_command}'"
+          Application.logger.error "Command not found '#{_command}' ... try: --help"
           nil
       end
       CommandRunner.new("ApplicationInfo,'#{_param}'") if _param

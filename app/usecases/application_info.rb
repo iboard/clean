@@ -7,7 +7,8 @@
 class ApplicationInfo < UseCase
 
   def desc
-    "--command='ApplicationInfo,\"loaded_files|available_commands\"'"
+    "--command='ApplicationInfo,\"available_commands\"'  - same as command 'commands'" + "\n  " +
+    "--command='ApplicationInfo,\"loaded_files\"'  - same as command 'loaded'"
   end
 
   # Run the ApplicationDebugger
