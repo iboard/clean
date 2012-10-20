@@ -74,16 +74,23 @@ Rake-tasks
 Extend with your code
 =====================
 
-* Write a class, derived from 'UseCase' - eg: MyClass < UseCase
-* Implement method MyClass::execute
+Write a class, derived from 'UseCase' somewhere in `app/usecases/my_class.rb`
+
+    class MyClass < UseCase
+      def desc
+        "Describe your usecase on a single line"
+      end
+      def execute
+        ... do something ...
+      end
+    end
+
 
 See `app/usecases/example_usecase.rb`
 
-Run
+Run the new UseCase
 
-    $ bin/run.rb --command='ExampleUsecase,"hello","world"'
-    ... shows the source of the class ExampleUsecase ...
-    Params: ["hello", "world"]
+    bin/run.rb --command='MyClass,"parameter one","parameter two"'
 
 
 100% Coverage & Documentation
