@@ -54,14 +54,14 @@ Extend with your code
 ---------------------
 
 * Write a class, derived from 'UseCase' - eg: MyClass < UseCase
-* Implement method MyClass::run
+* Implement method MyClass::execute
 
 See `app/usecases/example_usecase.rb`
 
 Run
 
     $ bin/run.rb --command='ExampleUsecase,"hello","world"'
-    This is an example UseCase
+    ... shows the source of the class ExampleUsecase ...
     Params: ["hello", "world"]
 
 
